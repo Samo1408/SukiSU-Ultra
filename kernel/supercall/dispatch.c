@@ -366,6 +366,9 @@ static int do_manage_mark(void __user *arg)
 }
 
 #ifdef CONFIG_KSU_SUSFS
+#include "../include/linux/susfs_def.h"
+#include "../include/linux/susfs.h"
+
 int ksu_handle_sys_reboot(int magic1, int magic2, unsigned int cmd, void __user **arg)
 {
     if (magic1 != KSU_INSTALL_MAGIC1) {

@@ -7,7 +7,7 @@
 
 #include "uapi/supercall.h"
 #include "supercall/internal.h"
-#include "arch.h" // IWYU pragma: keep
+
 #include "policy/allowlist.h"
 #include "policy/feature.h"
 #include "klog.h" // IWYU pragma: keep

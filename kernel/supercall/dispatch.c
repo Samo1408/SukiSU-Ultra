@@ -67,6 +67,8 @@ static int do_get_info(void __user *arg)
     return 0;
 }
 
+
+
 static int do_report_event(void __user *arg)
 {
     struct ksu_report_event_cmd cmd;
@@ -80,10 +82,9 @@ static int do_report_event(void __user *arg)
         static bool post_fs_data_lock = false;
         if (!post_fs_data_lock) {
             post_fs_data_lock = true;
-            } else {
-                pr_info("post-fs-data triggered\n");
-                on_post_fs_data();
-            }
+        } else {
+            pr_info("post-fs-data triggered\n");
+            on_post_fs_data();
         }
         break;
     }
@@ -91,10 +92,9 @@ static int do_report_event(void __user *arg)
         static bool boot_complete_lock = false;
         if (!boot_complete_lock) {
             boot_complete_lock = true;
-            } else {
-                pr_info("boot_complete triggered\n");
-                on_boot_completed();
-            }
+        } else {
+            pr_info("boot_complete triggered\n");
+            on_boot_completed();
         }
         break;
     }
@@ -106,9 +106,10 @@ static int do_report_event(void __user *arg)
     default:
         break;
     }
-
     return 0;
 }
+
+
 
 static int do_set_sepolicy(void __user *arg)
 {
@@ -120,6 +121,10 @@ static int do_set_sepolicy(void __user *arg)
 
     return handle_sepolicy((void __user *)cmd.data, cmd.data_len);
 }
+
+
+
+
 
 static int do_check_safemode(void __user *arg)
 {

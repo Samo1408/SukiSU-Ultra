@@ -1,5 +1,6 @@
 #ifndef __KSU_H_KSU_SYSCALL_HOOK
 #define __KSU_H_KSU_SYSCALL_HOOK
+#include <linux/syscalls.h>
 #include <asm/syscall.h>
 
 #if defined(__x86_64__)

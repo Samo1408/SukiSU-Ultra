@@ -34,6 +34,8 @@
 #include <linux/version.h>
 #ifndef X86_FEATURE_INDIRECT_SAFE
 #error "FATAL: Your kernel is missing the indirect syscall bypass patches!"
+#ifndef MODULE_IMPORT_NS
+#define MODULE_IMPORT_NS(ns)
 #endif
 #endif
 

@@ -1,7 +1,8 @@
 #ifdef __aarch64__
 
 #include "../syscall_hook.h"
-
+#include <linux/syscalls.h>
+#include <asm/syscall.h>
 #include <linux/kallsyms.h>
 #include <linux/mutex.h>
 #include <asm/cacheflush.h>
